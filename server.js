@@ -46,7 +46,7 @@ const requests = {};
 
 
 /* GET PATIENT */
-app.get('/patient/:id', (req, res) => {
+app.get('/get-patient/:id', (req, res) => {
   const id = req.params.id;
   const patient = patients[id];
 
@@ -59,7 +59,7 @@ app.get('/patient/:id', (req, res) => {
 
 
 /* CREATE REQUEST */
-app.post('/request', (req, res) => {
+app.post('/add-request', (req, res) => {
   const data = req.body;
 
   if (!data.patientId || !data.doctorId || !data.tests) {
@@ -91,7 +91,7 @@ app.post('/request', (req, res) => {
 
 
 /* GET REQUEST */
-app.get('/request/:code', (req, res) => {
+app.get('/get-request/:code', (req, res) => {
   const code = req.params.code;
   const request = requests[code];
 
@@ -104,7 +104,7 @@ app.get('/request/:code', (req, res) => {
 
 
 /* GET ALL REQUESTS */
-app.get('/requests', (req, res) => {
+app.get('/get-all-requests', (req, res) => {
   const allRequests = Object.values(requests);
 
   res.json({
