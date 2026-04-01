@@ -2,12 +2,6 @@ const Request = require('../models/request_model');
 
 
 const createRequest = async (req, res) => {
-    if (!req.body.patientId || !req.body.doctorId || !req.body.tests) {
-        return res.status(400).json({
-            message: "Missing required fields"
-        });
-    }
-
   try {
     const request = await Request.create(req.body);
     res.status(201).json({ request });
