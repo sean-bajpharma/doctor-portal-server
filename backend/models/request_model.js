@@ -10,6 +10,7 @@ const requestSchema = new Schema({
     resultId: {type: String, required: false},
     diagnosis: {type: String, required: false},
     mtod: {type: String, required: false},
+    isArchived: {type: Boolean, required: true},
     consultationDate: {type: Date, required: true},
     dateTimeReceived: {type: Date, required: true},
     tests: {type: [Object], required: true},

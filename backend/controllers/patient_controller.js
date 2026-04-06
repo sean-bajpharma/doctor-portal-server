@@ -17,19 +17,19 @@ const createPatient = async (req, res) => {
 
 
 const getPatient = async (req, res) => {
-    const id = req.params.id;
-    const patient = await Patient.findById(id)
+  const id = req.params.id;
+  const patient = await Patient.findById(id)
 
-    if (!patient) {
-        return res.status(404).json({error: 'No such patient'});
-    }
+  if (!patient) {
+      return res.status(404).json({error: 'No such patient'});
+  }
 
-    res.status(200).json(patient)
+  res.status(200).json(patient)
 }
 
 const getAllPatients = async (req, res) => {
-    const patients = await Patient.find({});
-    res.status(200).json(patients);
+  const patients = await Patient.find({});
+  res.status(200).json(patients);
 }
 
 
