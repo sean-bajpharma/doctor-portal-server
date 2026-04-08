@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const requestRoutes = require('./routes/request_router');
 const patientRoutes = require('./routes/patient_router');
+const testRoutes = require('./routes/test_router');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use('/api/requests', requestRoutes);
 app.use('/api/patients', patientRoutes);
+app.use('/api/tests', testRoutes);
 
 
 /* START SERVER */
