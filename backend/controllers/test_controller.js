@@ -12,7 +12,7 @@ const getTest = async (req, res) => {
 }
 
 const getAllTests = async (req, res) => {
-  const tests = await Test.find({}).sort({ name: 1 });
+  const tests = await Test.find({}).sort({ fullname: 1 });
   res.status(200).json(tests);
 }
 
